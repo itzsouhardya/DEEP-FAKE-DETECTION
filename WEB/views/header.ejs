@@ -1,0 +1,89 @@
+<nav class="navbar navbar-light bg-light">
+    <span class="navbar-hame">
+        <button class="navbar-toggler" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation" onclick="navbar_toggle();">
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <i class="fa fa-navicon"></i>
+        </button>
+    </span>
+    <a class="navbar-brand nav-head" href="/">
+       <img src="../public/favicon.ico" width="30" height="30" class="d-inline-block align-top" alt="logo">
+    </a>
+    <span class="nav-search">
+        <input type="text" class="form-control" placeholder="Search Cavernous"/>
+    </span>
+</nav>
+<section class="workspace blbg" id="side-menu" onclick="navbar_toggle();">
+    <ul class="nav justify-content-end" id="nav-menu">
+        <li class="nav-item">
+            <a class="nav-link"><img src="../public/favicon.ico" alt="chs" width="25" height="25" style="margin: 1px 40%;"/></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link flx" href="/main"><div class="icons"><i class="fa fa-desktop"></i></div><div class="nav-text">Main</div></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link flx" href="/index"><div class="icons"><i class="fa fa-object-group"></i></div><div class="nav-text">DFD Scanner</div></a>
+        </li>
+        <li class="nav-item" onclick="serviceMenu_toggle();">
+            <a class="nav-link flx"><div class="icons"><i class="fa fa-magic"></i></div><div class="nav-text">Services</div><div class="nav-expender" id="service-icon">&plus;</div></a>
+        </li>
+        <ul class="nav justify-content-end" id="service-menu">
+            <li class="nav-item">
+                <a class="nav-link flx" href="/imgGenerator"><div class="icons"><i class="fa fa-paint-brush"></i></div><div class="nav-text">Image Generator</div></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link flx" href="/imgToPdf"><div class="icons"><i class="fa fa-file-pdf-o"></i></div><div class="nav-text">Image to PDF</div></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link flx" href="/converter"><div class="icons"><i class="fa fa-file-image-o"></i></div><div class="nav-text">Image Converter</div></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link flx" href="/"><div class="icons"><i class="fa fa-object-group"></i></div><div class="nav-text">DeepFake Detector</div></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link flx" href="https://whitelotus4.github.io/FaceMorphisum.github.io/Publick/"><div class="icons"><i class="fa fa-id-badge"></i></div><div class="nav-text">Face Morphism</div></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link flx" href="/compressor"><div class="icons"><i class="fa fa-minus-square-o"></i></div><div class="nav-text">Image Compressor</div></a>
+            </li>
+        </ul>
+        <li class="nav-item">
+            <a class="nav-link flx" href="/api"><div class="icons"><i class="fa fa-plug"></i></div><div class="nav-text">API Plugins</div></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link flx" href="/about"><div class="icons"><i class="fa fa-group"></i></div><div class="nav-text">About Us</div></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link flx" href="/blogs"><div class="icons"><i class="fa fa-globe"></i></div><div class="nav-text">Blogs</div></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link flx" href="/docs"><div class="icons"><i class="fa fa-folder-open"></i></div><div class="nav-text">Document</div></a>
+        </li>
+        <span class="nav-account">
+            <li class="nav-item">
+                <a class="nav-link flx"><div class="icons"><i class="fa fa-tint"></i></div><div class="nav-text">Color Theme
+                        <span class="set-right">
+                            <label class="switch">
+                                <input type="checkbox" checked="true" id="theme1" onchange="system.themeToggle('theme1');">
+                                <span class="slider round"></span>
+                            </label>
+                        </span>
+                    </div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link flx" href="https://whitelotus4.github.io/weatherbyWHITELOTUS.github.io/PStorebyWhiteLotus/User_Login.html"><div class="icons"><i class="fa fa-user-circle-o"></i></div><div class="nav-text">Account</div></a>
+            </li>
+        </span>
+    </ul>
+</section>
+<div class="alert alert-light" id="alpha" role="alert">
+    <strong class="alert-heading"><i class="fa fa-wifi"></i> Alpha Call</strong> 
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="system.removeConnection();">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <article id="alpha-message"></article>
+    <hr>
+    <p class="mb-0">Please ignore this popup, due to the internet connection this message is appear.</p>
+</div>
+<div id="reportCard_holder"></div>
+<div id="heatmap_holder" style="background: var(--bg-color);"></div>

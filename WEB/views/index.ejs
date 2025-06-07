@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Cavernous Hoax Scanner">
+    <meta property="og:image" content="../images/side-img.png" name="og:image">
+    <meta itemprop="image" content="https://kidKrishkode.github.io/CavernousHoaxScanner.github.io/images/side-img.png">
+    <meta property="og:site_name" content="Cavernous Hoax Scanner">
+    <meta property="twitter:image" content="https://kidKrishkode.github.io/CavernousHoaxScanner.github.io/images/side-img.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Cavernous Hoax Scanner">
+    <meta content="Cavernous Hoax Scanner (CHS) is a cutting-edge deepfake image & video detection platform also feature image compresser, image converter, image to pdf to ensure AI-powered media processing." lang="en-us" name="description"/>
+    <meta content="Cavernous Hoax Scanner, Deepfake Detector, DFD, Image tool, deepfake, image editor, project, CNN, WHITE LOTUS" lang="en-us" name="keywords">
+    <meta name="google-site-verification" content="s30Z0opKABJMHsTOIT6f6iSoYSQel63Iln-BPe81Ov4" />
+    <title version="1.0">DEEP FAKE DETECTION</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/App.css"/>
+    <link rel="icon" href="../public/favicon.ico"/>
+</head>
+<style>
+    #ou1{
+        display: none;
+    }
+</style>
+<body onload="dfd.engine_start();">
+    <section class="workspace" id="dfdPage">
+        <img src="../images/3d_donut.png" alt="chs" class="right-top-des" loading="lazy"/>
+        <h2>DeepFake Detector</h2>
+        <div class="underline"></div>
+        <div class="containers">
+            <div class="drop-box">
+                <div class="placeholder"><i class="fa fa-file-image-o" style="font-size: 30px;"></i><br>Drag and drop an image or video, or click to select</div>
+                <div class="preview"></div>
+                <input type="file" id="file-input" accept="image/*, video/*" name="file-input" onchange="dfd.engine_active();">
+            </div>
+        </div>
+        <div class="progress-status">
+            <div class="progress">Please wait a little..</div>
+        </div>
+        <div class="flx containers-option" id="op1">
+            <div class="social-opener">
+                <i class="fa fa-facebook" onclick="alert('This feature is not avaliable in this version, please wait until the upper version release..');"></i>
+                <i class="fa fa-google" onclick="system.openGoogleURL();"></i>
+            </div>
+            <div class="process-btn">
+                <div class="btn btn-process" onclick="process();">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stars" viewBox="0 0 16 16">
+                        <path d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.73 1.73 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.73 1.73 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.73 1.73 0 0 0 3.407 2.31zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/>
+                    </svg>
+                    Process
+                </div>
+            </div>
+        </div>
+        <img src="../images/glow1.png" alt="chs" class="left-middle-des" loading="lazy"/>
+        <img src="../images/3d_atom.png" alt="chs" class="right-middle-des" loading="lazy"/>
+        <img src="../images/arrow_circle.png" alt="chs" class="left-bottom-des" loading="lazy"/>
+        <div class="glass-status flx" id="op2">
+            <span class="head">Media Accepted:</span><span class="data" id="media-acc">No Media Found!</span>
+        </div>
+        <div class="glass-status" id="op3">
+            <div class="flx">
+                <span class="head">Media Type:</span><span class="data" id="media-type">Not Selected!</span>
+            </div>
+            <div class="flx">
+                <span class="head">Media Extension:</span><span class="data" id="media-exc">Not Selected!</span>
+            </div>
+            <div class="flx">
+                <span class="head">Media Size:</span><span class="data" id="media-size">Not Selected!</span>
+            </div>
+            <div class="flx">
+                <span class="head">Media Duration:</span><span class="data" id="media-due">Not Selected!</span>
+            </div>
+            <div class="flx">
+                <span class="head">Media Dimantion:</span><span class="data" id="media-diamention">Not Selected!</span>
+            </div>
+        </div>
+        
+        <div class="glass-status" id="ou1">
+            <div class="flx">
+                <span class="head">Result:</span><span class="data" id="output-result">Not Selected!</span>
+            </div>
+            <div class="flx">
+                <span class="head">Accuracy:</span><span class="data" id="output-accuracy">Not Selected!</span>
+            </div>
+            <div class="flx">
+                <span class="head">Media Size:</span><span class="data" id="output-size">Not Selected!</span>
+            </div>
+            <div class="flx">
+                <span class="head">Media Dimantion:</span><span class="data" id="output-dim">Not Selected!</span>
+            </div>
+            <div class="flx">
+                <span class="head">Prototype 1:</span><span class="data" id="output-prototype1">Not Selected!</span>
+            </div>
+            <div class="flx">
+                <span class="head">Prototype 2:</span><span class="data" id="output-prototype3">Not Selected!</span>
+            </div>
+        </div>
+        <div class="htsi appear hide" id="op4">
+            <h2>How to Use it.</h2>
+            <div class="underline"></div>
+            <div class="card-group flo">
+                <div class="card">
+                    <h4 class="card-title"><span>1</span> Drop your Media</h4>
+                    <p class="card-text text-muted">To upload an image or video, select it from your device's storage (Drive or Gallery) and drop it in the Drop box. verify supported format from <a href="/docs?search=media format">doc</a>.</p>
+                </div>
+                <div class="card">
+                    <h4 class="card-title"><span>2</span> Media Get Permit</h4>
+                    <p class="card-text text-muted">Dropped media files are checked for size limits. Valid files (image or video) are accepted; otherwise, configuration is required..</p>
+                </div>
+            </div>
+            <div class="card-group flo">
+                <div class="card">
+                    <h4 class="card-title"><span>3</span> Click The Process</h4>
+                    <p class="card-text text-muted">Click on the ‘Process’ button to begin the actual process of the system. During the process, stay calm it may take few moment. Don't close the window.</p>
+                </div>
+                <div class="card">
+                    <h4 class="card-title"><span>4</span> Download Report</h4>
+                    <p class="card-text text-muted">The output of process is shown in new window. The output shows the result of classification as Fake or Real. The output report obtained is downloaded automatically and manually.</p>
+                </div>
+            </div>
+        </div>
+</body>
+<script src="../public/App.js"></script>
+<script src="../public/default.min.js"></script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "description": "Cavernous Hoax Scanner helps detect deepfake images and video using AI-driven models. Ensure authenticity with advanced media processing algorithms."
+  }
+</script>
+<script>
+    pageSet.push('dfdPage');
+    appearSet.push(['.htsi',380]);
+    currentPage.push('index');
+
+    function directUpload(file){
+        let extension = 'png';
+        let heatmap = 'true';
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function(){
+            const imageData = reader.result;
+            timeoutcheck();
+            fetch('/index/process', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({extension, imageData, heatmap})
+            }).then(response => response.json()).then(data => {
+                afterResponce(data, imageData);
+            }).catch(e=>console.log(e));
+        }
+    }
+    function process(){
+        let fileInput = document.getElementById('file-input');
+        if(fileInput.files.length!=0){
+            const file = fileInput.files[0];
+            document.querySelector('.progress-status').style.display = 'block';
+            system.block_resource({input: "file-input", selector: []});
+            if(document.getElementById('media-type').textContent=='Video'){
+                videoUpload(file);
+            }else{
+                if(document.getElementById('media-size').textContent.replace('Kb','')*1 > 900){
+                    compressAndUpload(file, document.getElementById('media-size').textContent.replace('Kb','')*1);
+                }else{
+                    directUpload(file);
+                }
+            }
+        }else{
+            alert("Please provide an media to process next!");
+        }
+    }
+    function compressAndUpload(file, size){
+        const singlePartsAPI = eval(config.hex.singlePartsAPI);
+        let limit = Math.floor(size/900)+2;
+        const extension = 'png';
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function(){
+            const imageData = reader.result;
+            compressBase64Image(imageData).then(compressed_imageData => {
+                limit = Math.floor(getBase64SizeKB(compressed_imageData)/900)+2;
+                singlePartsAPI('/load/single', compressed_imageData, limit).then((result) => {
+                    timeoutcheck();
+                    fetch('/index/process', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            extension: extension,
+                            img: '',
+                            load: 'true',
+                            heatmap: 'true'
+                        })
+                    }).then(response => response.json()).then(data => {
+                        afterResponce(data, imageData);
+                    });
+                }).catch((error) => {
+                    console.log("Error sending parts:", error);
+                });
+            });
+        }
+    }
+    let video_first_frame = '';
+    function videoUpload(file){
+        let progress = document.querySelector('.progress');
+        const singlePartsAPI = eval(config.hex.singlePartsAPI);
+        const extension = 'webm';
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function(){
+            const videoData = reader.result;
+            setTimeout(()=>{progress.textContent = "Video frame evaluate start...";},1000);
+            compressBase64Video(videoData).then(async (compressed_videoData) => {
+                const frames = await extractFramesFromBase64Video(compressed_videoData);
+                let prediction_list = [];
+                let responce_tree = [];
+                video_first_frame = frames[0].image;
+                let first_failer = 0;
+                for (let i = 0; i < frames.length; i++) {
+                    let image_data = frames[i].image;
+                    progress.textContent = "Frame "+(i+1)+" start compressing...";
+                    image_data = await compressBase64Image(image_data);
+                    let limit = Math.floor(getBase64SizeKB(image_data) / 900) + 2;
+                    try{
+                        progress.textContent = "Frame "+(i+1)+" sending to detect...";
+                        await singlePartsAPI('/load/single', image_data, limit);
+                        const response = await fetch('/index/process', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                extension: extension,
+                                img: '',
+                                load: 'true'
+                            })
+                        });
+                        // timeoutcheck();
+                        const data = await response.json();
+                        prediction_list.push({
+                            second: frames[i].second,
+                            ...data?.result
+                        });
+                        responce_tree.push(data?.result?.responce_tree);
+                    } catch (error) {
+                        console.error(`Error on frame ${i}:`, error);
+                        progress.textContent = "Frame "+(i+1)+" are fail to rech API";
+                        if(first_failer==0){
+                            i--;
+                        }else{
+                            responce_tree.push(loosParameterRecover());
+                        }
+                    }
+                }
+                progress.textContent = "Response data analysing...";
+                let responce_tree_summarize = summarizePrototypeResults(responce_tree);
+                let result = analyzeClassificationSequence(prediction_list);
+                result.responce_tree = responce_tree_summarize;
+                let data = {'result': result};
+                afterResponce(data, videoData);
+            });
+        }
+    }
+    function sampleUpload(index){
+        document.querySelector('.progress-status').style.display = 'block';
+        system.block_resource({input: "file-input", selector: []});
+        const preview = document.querySelector('.preview');
+        document.querySelector('.sample-dfd').style.display = 'none';
+        setTimeout(()=>{
+            fetch('/index/sample', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({'index': index-1,})
+            }).then(response => response.json()).then(data => {
+                afterResponce(data, preview.childNodes[0].src);
+            }).catch(e=>console.log(e));
+        },4000);
+    }
+    
+    function afterResponce(data, mediaData){
+        if(typeof data.error !== "undefined"){
+            return system.handelPyError(data.error);
+        }
+        console.log(data);
+        if(data?.result?.error=="No valid classification data" || data.result == undefined || data.result == "undefined"){
+            error = {
+                "code": 417,
+                "message": "Processing failed due to some of parameters of the media is missing or not reaching API for week network, Try again with strong connection!"
+            }
+            return system.handelPyError(error);
+        }
+        if(document.getElementById('media-type').textContent=='Video'){
+            document.querySelector('.preview').innerHTML = `<video autoplay="true" controls="true"><source src=${mediaData} type="video/mp4"></video>`;
+        }else{
+            document.querySelector('.preview').innerHTML = `<img src=${mediaData} alt='loading' id="dimg"/>`;
+        }
+        document.getElementById('op1').innerHTML = `<div class="btn btn-process" onclick="route('');"><i class="fa fa-long-arrow-left"></i> Try with another</div>
+        `;
+        document.getElementById('ou1').style.display = 'block';
+        document.getElementById('output-result').textContent = data?.result?.class+" "+mediaData.split('data:')[1].split('/')[0];
+        document.getElementById('output-accuracy').textContent = (data?.result?.accuracy || data?.result?.score) + " %";
+        document.getElementById('output-size').textContent = document.getElementById('media-size').textContent;
+        document.getElementById('output-dim').textContent = document.getElementById('media-diamention').textContent;
+        document.getElementById('output-prototype1').textContent = `${data?.result?.responce_tree?.prototype_1?.class} (${data?.result?.responce_tree?.prototype_1?.accuracy}%)`;
+        document.getElementById('output-prototype3').textContent = `${data?.result?.responce_tree?.prototype_3?.class} (${data?.result?.responce_tree?.prototype_3?.accuracy}%)`;
+        if(data?.result?.responce_tree?.prototype_1?.heatmap){
+            document.getElementById('output-para').innerHTML = `<div class="btn btn-process" onclick="getHeatmap('${mediaData}', '${data.result.responce_tree.prototype_1.heatmap}');">View Parameters</div>`;
+        }
+        document.getElementById('op2').style.display = 'none';
+        document.getElementById('op3').style.display = 'none';
+        document.getElementById('op4').style.display = 'none';
+        document.getElementById('file-input').disabled = true;
+        document.querySelector('.progress-status').style.display = 'none';
+    }
+    function timeoutcheck(){
+        setTimeout(()=>{
+            let result = document.getElementById('output-result').textContent;
+            if(result=='Not Selected!' || result==undefined){
+                system.handelPyError({"code": 408, "message": "Process failed due to the timeout. Process take more then 15s to compile and turn around from the CHSAPI. Please try again later."});
+            }
+        },20000);
+    }
+</script>
+</html>
