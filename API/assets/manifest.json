@@ -1,0 +1,85 @@
+{
+    "name": "Cavernous Hoax Scanner",
+    "short_name": "CHS",
+    "description": "Cavernous Hoax Scanner is a web-based platform that leverages JPEN stack technology to implement deep learning algorithms, specifically CNN, GANs, Relational regression.",
+    "icons": [
+        {
+            "src": "favicon.png",
+            "sizes": "1500x1500 16x16",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "logo1500.png",
+            "type": "image/png",
+            "sizes": "1500x1500"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#22577aff",
+    "background_color": "#ffffff",
+    "error_log": [
+        {"code": 0, "desc": "Invalid user input: empty field detected"},
+        {"code": 1, "desc": "Media not supported for this utility, Check the media property or report it!"},
+        {"code": 2, "desc": "Image too large: maximum size exceeded"},
+        {"code": 3, "desc": "Failed to compress image: unknown compression error"},
+        {"code": 4, "desc": "Watermarking failed: unable to overlay text/image"},
+        {"code": 5, "desc": "Face detection failed: no faces detected in image/video"},
+        {"code": 6, "desc": "Video processing failed: unsupported video codec"},
+        {"code": 7, "desc": "Image to PDF conversion failed: unable to generate PDF"},
+        {"code": 8, "desc": "Invalid video format: only MP4, AVI, and MOV are supported"},
+        {"code": 9, "desc": "Video too large: maximum size exceeded"},
+        {"code": 10, "desc": "Failed to extract frames from video: unknown error"},
+        {"code": 11, "desc": "Image upload failed: unable to upload image to server"},
+        {"code": 12, "desc": "Video upload failed: unable to upload video to server"},
+        {"code": 13, "desc": "Image resizing failed: unable to resize image"},
+        {"code": 14, "desc": "Image optimization failed: unable to optimize image"},
+        {"code": 15, "desc": "Video optimization failed: unable to optimize video"},
+        {"code": 16, "desc": "Image size under conditions: unsble to resize image"},
+        {"code": 17, "desc": "Unwanted media convertion try, Check the media property or report it!"},
+        {"code": 18, "desc": "Access not possible using provided API Key, Check the API Key or report it!"},
+        {"code": 19, "desc": "Image Processing not possible using provided information, Check the media or repot it!"},
+        {"code": 20, "desc": "Routes not found on thi url, Check the end point or report it!"}
+    ],
+    "error_schema": {
+        "error": "... Exception",
+        "detail": {
+            "desc": null,
+            "path": "./"
+        },
+        "network": {
+            "url": "https://chsapi.vercel.app/",
+            "kernel": "inphant api",
+            "provider": "chs"
+        },
+        "status": {
+            "code": 0,
+            "message": "Task Faild due to ..."
+        }
+    },
+    "result_schema": {
+        "result": "",
+        "metadata": {
+            "version": "1.0.0",
+            "request_id": null,
+            "header": {
+                "Content-Type": "application/json"
+            },
+            "processing_time": "2s",
+            "timestamp": null
+        },
+        "network": {
+            "url": "https://chsapi.vercel.app/api/",
+            "kernel": "inphant api",
+            "provider": "chs"
+        },
+        "source": "WHITE LOTUS Community",
+        "status": {
+            "code": 200,
+            "message": "Image processed successfully"
+        }
+    },
+    "root_schema": {
+        "html_content": "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta http-equiv='X-UA-Compatible' content='IE=edge'><meta name='viewport' content='width=device-width, initial-scale=1.0'><meta property='og:image' content='https://kidKrishkode.github.io/Streamline-Diagnosis.github.io/images/Cavernous.png' name='og:image'><meta content='CHSAPI is a media-tech API platform that leverages JPEN stack technology to serve deepfake detection, image compressor, image converter, image to pdf etc utility. specifically made for Cavernous Hoax Scanner but now free for every one.' lang='en-us' name='description'><meta content='Cavernous Hoax Scanner, Deepfake Detector, DFD, Image tool, deepfake, image editor, project, CNN, WHITE LOTUS' lang='en-us' name='keywords'><title version='1.0'>Cavernous Hoax Scanner</title><link rel='icon' href='https://kidKrishkode.github.io/Streamline-Diagnosis.github.io/images/Cavernous.png'/></head><body><h1 style='text-align: center;font-family: sans-serif;margin-top: 20%;color: #430085;font-size: 50px;'>Ahoy hoy Universe</h1></body></html>"
+    }
+}

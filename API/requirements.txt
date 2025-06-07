@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+onnxruntime
+numpy
+Pillow
+svgwrite
+fpdf
+aiohttp
+requests
